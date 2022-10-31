@@ -50,10 +50,12 @@ public class LinkedList implements List{
 
 	@Override
 	public int size() {
+		Node arr = this.head;
 		int i = 0;
 
-		if (this.head != null) {
+		while (arr != null) {
 			i++;
+			arr = arr.next;
 		}
 		return i;
 	}
