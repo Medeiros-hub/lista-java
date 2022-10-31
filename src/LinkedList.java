@@ -45,7 +45,27 @@ public class LinkedList implements List{
 
 	@Override
 	public void update(int position, int value) {
+		// verficar se a lista é nula
+		if (this.head == null) {
+			return;
+		} 
 		
+		int maxPosition = this.size();
+		if (position < 1 || position > maxPosition) {
+			return;
+		}
+
+		Node arr = this.head;
+		int i = 1;
+		while (arr != null) {
+			if (i == position) {
+				arr.content = value;
+				break;
+			}
+			i++;
+			arr = arr.next;
+		}
+
 	}
 
 	@Override
